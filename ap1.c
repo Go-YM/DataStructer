@@ -1,48 +1,48 @@
 #include <stdio.h>
 #include <stdlib.h>
-//<stdio.h>¿Í <stdlib.h>¸¦ ÄÄÆÄÀÏ Àü¿¡ ¼Ò½º¿¡ È®Àå ÇÏµµ·Ï Áö½Ã
+//<stdio.h>ì™€ <stdlib.h>ë¥¼ ì»´íŒŒì¼ ì „ì— ì†ŒìŠ¤ì— í™•ì¥ í•˜ë„ë¡ ì§€ì‹œí•¨
 
-//¸ŞÀÎÇÔ¼ö
+//ë©”ì¸í•¨ìˆ˜
 void main()
 {
-    int list[5];                //ÀÏÂ÷¿ø¹è¿­ list ¼±¾ğ
-    int *plist[5] = {NULL,};    //Æ÷ÀÎÅÍ¹è¿­ plist ¼±¾ğ
-    //stack¿µ¿ª¿¡ ÇÒ´ç
+    int list[5];                //ì¼ì°¨ì›ë°°ì—´ list ì„ ì–¸
+    int *plist[5] = {NULL,};    //í¬ì¸í„°ë°°ì—´ plist ì„ ì–¸
+    //stackì˜ì—­ì— í• ë‹¹
 
-    plist[0] = (int *)malloc(sizeof(int));  //plist¸¦ heap¿µ¿ª¿¡ ÇÒ´ç
-    list[0] = 1;        //list[0]¿¡ 1 ÃÊ±âÈ­    
-    list[1] = 100;      //list[1]¿¡ 100 ÃÊ±âÈ­
-    *plist[0] = 200;    //plist[0]°¡ ¿ªÂüÁ¶ ÇÏ´Â °ª¿¡ 200 ÃÊ±âÈ­
+    plist[0] = (int *)malloc(sizeof(int));  //plistë¥¼ heapì˜ì—­ì— í• ë‹¹
+    list[0] = 1;        //list[0]ì— 1 ì´ˆê¸°í™”    
+    list[1] = 100;      //list[1]ì— 100 ì´ˆê¸°í™”
+    *plist[0] = 200;    //plist[0]ê°€ ì—­ì°¸ì¡° í•˜ëŠ” ê°’ì— 200 ì´ˆê¸°í™”
 
-    printf("-----[°í¿µ¹Î] [2019038003]-----\n");
+    printf("-----[ê³ ì˜ë¯¼] [2019038003]-----\n");
 
-    printf("value of list[0] = %d\n", list[0]);         //list[0]ÀÇ °ª Ãâ·Â
-    printf("address of list[0] = %p\n", &list[0]);      //list[0]ÀÇ ÁÖ¼Ò °ª Ãâ·Â
-    printf("value of list = %p\n", list);               //listÀÇ °ª Ãâ·Â
-    printf("address of list (&list) = %p\n", &list);    //listÀÇ ÁÖ¼Ò °ª Ãâ·Â
+    printf("value of list[0] = %d\n", list[0]);         //list[0]ì˜ ê°’ ì¶œë ¥
+    printf("address of list[0] = %p\n", &list[0]);      //list[0]ì˜ ì£¼ì†Œ ê°’ ì¶œë ¥
+    printf("value of list = %p\n", list);               //listì˜ ê°’ ì¶œë ¥
+    printf("address of list (&list) = %p\n", &list);    //listì˜ ì£¼ì†Œ ê°’ ì¶œë ¥
 
     printf("----------------------------------------\n\n"); 
-    printf("value of list[1] = %d\n", list[1]);         //list[1]ÀÇ °ª Ãâ·Â
-    printf("address of list[1] = %p\n", &list[1]);      //list[1]ÀÇ ÁÖ¼Ò °ª Ãâ·Â
-    printf("value of *(list+1) = %d\n", *(list + 1));   //list+1ÀÌ ¿ªÂüÁ¶ ÇÏ´Â °ª Ãâ·Â
-    printf("address of list+1 = %p\n", list+1);         //list+1ÀÇ °ª Ãâ·Â
+    printf("value of list[1] = %d\n", list[1]);         //list[1]ì˜ ê°’ ì¶œë ¥
+    printf("address of list[1] = %p\n", &list[1]);      //list[1]ì˜ ì£¼ì†Œ ê°’ ì¶œë ¥
+    printf("value of *(list+1) = %d\n", *(list + 1));   //list+1ì´ ì—­ì°¸ì¡° í•˜ëŠ” ê°’ ì¶œë ¥
+    printf("address of list+1 = %p\n", list+1);         //list+1ì˜ ê°’ ì¶œë ¥
 
     printf("----------------------------------------\n\n");
-    printf("value of *plist[0] = %d\n", *plist[0]);     //plist[0]ÀÌ ¿ªÂüÁ¶ ÇÏ´Â °ª Ãâ·Â
-    printf("&plist[0] = %p\n", &plist[0]);              //plist[0]ÀÇ ÁÖ¼Ò¸¦ Ãâ·Â
-    printf("&plist = %p\n", &plist);                    //plistÀÇ ÁÖ¼Ò¸¦ Ãâ·Â
-    printf("plist = %p\n", plist);                      //plistÀÇ °ª Ãâ·Â    
-    printf("plist[0] = %p\n", plist[0]);                //plist[0]ÀÇ °ª Ãâ·Â
-    printf("plist[1] = %p\n", plist[1]);                //plist[1]ÀÇ °ª Ãâ·Â
-    printf("plist[2] = %p\n", plist[2]);                //plist[2]ÀÇ °ª Ãâ·Â
-    printf("plist[3] = %p\n", plist[3]);                //plist[3]ÀÇ °ª Ãâ·Â
-    printf("plist[4] = %p\n", plist[4]);                //plist[4]ÀÇ °ª Ãâ·Â
+    printf("value of *plist[0] = %d\n", *plist[0]);     //plist[0]ì´ ì—­ì°¸ì¡° í•˜ëŠ” ê°’ ì¶œë ¥
+    printf("&plist[0] = %p\n", &plist[0]);              //plist[0]ì˜ ì£¼ì†Œë¥¼ ì¶œë ¥
+    printf("&plist = %p\n", &plist);                    //plistì˜ ì£¼ì†Œë¥¼ ì¶œë ¥
+    printf("plist = %p\n", plist);                      //plistì˜ ê°’ ì¶œë ¥    
+    printf("plist[0] = %p\n", plist[0]);                //plist[0]ì˜ ê°’ ì¶œë ¥
+    printf("plist[1] = %p\n", plist[1]);                //plist[1]ì˜ ê°’ ì¶œë ¥
+    printf("plist[2] = %p\n", plist[2]);                //plist[2]ì˜ ê°’ ì¶œë ¥
+    printf("plist[3] = %p\n", plist[3]);                //plist[3]ì˜ ê°’ ì¶œë ¥
+    printf("plist[4] = %p\n", plist[4]);                //plist[4]ì˜ ê°’ ì¶œë ¥
 
     free(plist[0]);     
-    //plist ¹è¿­ÀÇ ¸Ş¸ğ¸® ÇÒ´ç ÇØÁ¦
+    //plist ë°°ì—´ì˜ ë©”ëª¨ë¦¬ í• ë‹¹ í•´ì œ
 }
-//ÁÖ¼Ò °ªÀº ¸ğµÎ 16Áø¼ö·Î, °ªÀº ¸ğµÎ 10Áø¼ö·Î Ãâ·Â
+//ì£¼ì†Œ ê°’ì€ ëª¨ë‘ 16ì§„ìˆ˜ë¡œ, ê°’ì€ ëª¨ë‘ 10ì§„ìˆ˜ë¡œ ì¶œë ¥
 
-/*À§ÀÇ ¼±¾ğ µÈ µÎ ¹è¿­ list¿Í plist¿¡¼­ ¹è¿­ list´Â °ªÀ» ÀúÀåÇÏ°í plist´Â ¹è¿­À» ÀúÀåÇÑ´Ù. 
-list´Â ¹è¿­ÀÌ±â¿¡ list[0~4]´Â ¸ğµÎ Á¤¼ö°ªÀ» °¡Áö°í,
-plist´Â Æ÷ÀÎÅÍ ¹è¿­ÀÌ±â¿¡ plist[0~4]´Â ¸ğµÎ ÁÖ¼Ò °ªÀ» °¡Áø´Ù.*/
+/*ìœ„ì˜ ì„ ì–¸ ëœ ë‘ ë°°ì—´ listì™€ plistì—ì„œ ë°°ì—´ listëŠ” ê°’ì„ ì €ì¥í•˜ê³  plistëŠ” ë°°ì—´ì„ ì €ì¥í•œë‹¤. 
+listëŠ” ë°°ì—´ì´ê¸°ì— list[0~4]ëŠ” ëª¨ë‘ ì •ìˆ˜ê°’ì„ ê°€ì§€ê³ ,
+plistëŠ” í¬ì¸í„° ë°°ì—´ì´ê¸°ì— plist[0~4]ëŠ” ëª¨ë‘ ì£¼ì†Œ ê°’ì„ ê°€ì§„ë‹¤.*/
